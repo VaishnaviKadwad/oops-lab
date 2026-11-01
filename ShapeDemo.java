@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 class Shape
 {
     void draw()
