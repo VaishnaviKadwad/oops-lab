@@ -57,7 +57,7 @@ class StackDemo
 
         Stack s = new Stack();
 
-        int ch=0;
+        int ch = 0;
         int ele;
 
         while(ch != 4)
