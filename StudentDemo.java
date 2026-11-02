@@ -3,32 +3,62 @@ import java.util.Scanner;
 class Student
 {
     static int count;
-    String Name;
-    String usn;
+
+    int m1, m2, m3;
+    double average;
 
     static
     {
         count = 0;
-        System.out.println("Welcome to Student Enrollment System");
+        System.out.println("Welcome to University Enrollment System");
     }
 
-    Student(String n, String u)
+    Student()
     {
-        Name=n;
-        usn=u;
-        System.out.println("New student enrolled");
         count++;
     }
 
-    void details()
+    void read(Scanner sc)
     {
-        System.out.println("Name: " + Name);
-        System.out.println("USN: " + usn);
+        System.out.print("Enter first test mark: ");
+        m1 = sc.nextInt();
+
+        System.out.print("Enter second test mark: ");
+        m2 = sc.nextInt();
+
+        System.out.print("Enter third test mark: ");
+        m3 = sc.nextInt();
     }
 
-    static void display()
+    void calculate()
     {
-        System.out.println("Total number of students: " + count);
+        int lowest;
+
+        if(m1 <= m2 && m1 <= m3)
+        {
+            lowest = m1;
+        }
+        else if(m2 <= m1 && m2 <= m3)
+        {
+            lowest = m2;
+        }
+        else
+        {
+            lowest = m3;
+        }
+
+        average = (m1 + m2 + m3 - lowest) / 2.0;
+    }
+
+    void display()
+    {
+        System.out.println("Test marks: " + m1 + ", " + m2 + ", " + m3);
+        System.out.println("Average of best two marks: " + average);
+    }
+
+    static void displayCount()
+    {
+        System.out.println("Total students enrolled: " + count);
     }
 }
 
@@ -45,16 +75,22 @@ class StudentDemo
 
         for(int i = 0; i < n; i++)
         {
-            System.out.print("Enter name of student " + (i + 1) + ": ");
-            String name = sc.next();
-            System.out.print("Enter USN of student " + (i + 1) + ": ");
-            String usn = sc.next();
+            s[i] = new Student();
 
-            s[i] = new Student(name, usn);
-            s[i].details();
-            System.out.println();
+            System.out.println("\nEnter marks of Student " + (i + 1));
+            s[i].read(sc);
+
+            s[i].calculate();
         }
 
-        Student.display();
+        System.out.println("\n----- STUDENT DETAILS -----");
+
+        for(int i = 0; i < n; i++)
+        {
+            System.out.println("\nStudent " + (i + 1));
+            s[i].display();
+        }
+
+        Student.displayCount();
     }
 }
