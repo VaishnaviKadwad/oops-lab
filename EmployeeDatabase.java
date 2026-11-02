@@ -42,23 +42,7 @@ class Employee
         System.out.println("Salary: " + salary);
     }
 
-    boolean check(String s1, String s2)
-    {
-        if(s1.length() != s2.length())
-        {
-            return false;
-        }
-
-        for(int i = 0; i < s1.length(); i++)
-        {
-            if(s1.charAt(i) != s2.charAt(i))
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
+    
 }
 
 class EmployeeDatabase
@@ -89,7 +73,7 @@ class EmployeeDatabase
 
         for(int i = 0; i < 5; i++)
         {
-            if(e[i].check(e[i].department, "sales"))
+            if (e[i].department.equalsIgnoreCase("sales"))
             {
                 sum = sum + e[i].salary;
             }
@@ -101,8 +85,8 @@ class EmployeeDatabase
 
         for(int i = 0; i < 5; i++)
         {
-            if(e[i].check(e[i].department, "purchase") &&
-               e[i].check(e[i].designation, "manager"))
+            if (e[i].department.equalsIgnoreCase("purchase")
+            && e[i].designation.equalsIgnoreCase("manager"))
             {
                 if(max == -1 || e[i].salary > e[max].salary)
                 {
