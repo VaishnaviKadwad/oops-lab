@@ -109,23 +109,17 @@ class MyOwnAutoShop
         Sedan s = new Sedan(speed, price, color, length);
 
         System.out.println("\nEnter Ford details:");
-
         System.out.print("Enter speed: ");
         speed = sc.nextInt();
-
         System.out.print("Enter regular price: ");
         price = sc.nextDouble();
         sc.nextLine();
-
         System.out.print("Enter color: ");
         color = sc.nextLine();
-
         System.out.print("Enter year: ");
         int year = sc.nextInt();
-
         System.out.print("Enter manufacturer discount: ");
         int discount = sc.nextInt();
-
         Ford f = new Ford(speed, price, color, year, discount);
 
         System.out.println("\nEnter Truck details:");
