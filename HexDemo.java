@@ -49,11 +49,8 @@ class HexNum extends Num
         while(temp > 0)
         {
             int rem = (int)(temp % 16);
-
             char s = hex[rem];
-
             c = s + c;
-
             temp = temp / 16;
         }
 
