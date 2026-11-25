@@ -50,7 +50,6 @@ class TestMyPoint {
     
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-
         MyPoint p1 = new MyPoint();
 
         System.out.println("Default point: " + p1);
