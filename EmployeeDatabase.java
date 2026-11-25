@@ -41,7 +41,6 @@ class Employee
         System.out.println("Designation: " + designation);
         System.out.println("Salary: " + salary);
     }
-
     
 }
 
