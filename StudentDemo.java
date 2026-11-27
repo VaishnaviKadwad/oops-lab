@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 class Student
 {
     static int count;
